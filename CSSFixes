@@ -1,6 +1,26 @@
-body.normal, #page_header{
+/********************************************************
+Disclaimer: 
+This is a fast and dirty CSS fix to make the new Ravelery desktop design
+easier on my eyes. I will continue to tweak this CSS for myself and post
+updates to this source file, so check back if you like my changes so far. 
+I will not guarantee this works for everyone in all browsers nor will I
+offer any support or take change requests. Hopefully this makes at least
+a few other technically saavy Ravelry users lives a bit easier.
+
+How To Use:
+1. Install the "Stylish" extension on your browser.
+2. From the extension icon, select the 3 vertical dots and then select Create New Style
+3. Name it as you wish, but paste all the code in this file into the editor.
+4. Right below the editor is the option to specify what URL the CSS applies to.
+    Set this to Applies To: [URLS starting with] https://www.ravelry.com
+5. Save and enjoy... hopefully.
+
+********************************************************/
+body.normal, #page_header,
+body.search {
     background: #f7f7f7;
     background-image: none;
+              
 }
 body.with_navigation_v2 #page_header {
     border-bottom: 3px solid #c1c1c1;
@@ -10,15 +30,14 @@ body {
     font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 /** PAGINATION **/
-body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
+ body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
     background-color: inherit;
 }
-
 .page_bar__current {
     border: none;
     background-color: #c1c1c1;
 }
-a.page_bar__page { 
+a.page_bar__page {
     box-shadow: none;
 }
 body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
@@ -29,12 +48,13 @@ body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
     font-weight: normal;
     text-decoration: underline;
 }
-
 body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
     background-color: none;
     padding: none;
 }
-/** HEADER **/
+/********************************************************
+HEADER 
+********************************************************/
  .navigation_v2__tab--dropdown > a, .navigation_v2__tab--dropdown > a:visited, .navigation_v2__tab--dropdown > a:hover {
     color: #3d3d3d;
 }
@@ -47,11 +67,13 @@ body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
 .c-navigation_indicator__snake {
     border-bottom: 5px solid #7391fe;
 }
-/** THOSE FREAKIN BUTTONS **/
-.topics .forum_post_row .clicker {
+/********************************************************
+THOSE FREAKIN BUTTONS 
+********************************************************/
+ .topics .forum_post_row .clicker {
     line-height: inherit !important;
 }
- .clicker_v2 {
+.clicker_v2 {
     background-color: #ee6e62;
     border: none;
     color: #FFF !important;
@@ -61,7 +83,7 @@ body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
     color: #FFFFFF !important;
 }
 .clicker_v2, .clicker {
-    box-shadow: 4px 4px 0 0 #f5f5f5;
+    box-shadow: none;
 }
 a.clicker:focus span {
     color: #FFF;
@@ -69,62 +91,129 @@ a.clicker:focus span {
 .clicker_v2--standard {
     padding: 8px !important;
 }
-img.o-icon--group_leave,
-img.o-icon--messages_invite,
-img.o-icon--forums_reply{
+img.o-icon--group_leave, img.o-icon--messages_invite, img.o-icon--forums_reply,
+img.o-icon--share_alternate, img.o-icon--save {
     display: none;
 }
-/** PAGES **/
-#content {
+#advanced_search_link, #advanced_search_link:visited {
+    color: #fff !important;
+}
+.toolbar_builder input.clicker_v2[type=submit] {
+    border: none;
+}
+/********************************************************
+GENERAL PAGES I GUESS
+********************************************************/
+ #content {
     /*width: auto;
     padding-left: 50px;
     padding-right: 50px;*/
 }
- .box_title, .box_title--standalone {
+.box_title, .box_title--standalone {
     background-color: #5998a6;
     color: #FFFFFF;
     text-align: center;
 }
 .box {
-    box-shadow: 4px 4px 0 0 #f5f5f5;
-    border: 1px solid #f5f5f5;
+    box-shadow: none;
+    border: 1px solid #efefef;
 }
-.box_title, .box_contents {
-    border: none;
-}
-.marketplace_preview .enabler_image img, .avatar_small img, .navigation_v2__avatar img {
+.box_title, .box_contents,
+.marketplace_preview .enabler_image img, .avatar_small img, .navigation_v2__avatar img,
+.enabler_image img {
     border: none;
 }
 body.supports_subnavigation.with_subnavigation .tabs--subnavigation {
     border-bottom: 3px solid #c1c1c1;
     background-color: inherit;
 }
-
-/** FORUMS **/
- table, .forum_glance table {
+ul.tag_set li.tag, span.tag_word {
+    border: none;
+}
+ul.tag_set li:not(.tag_set__control), span.tag_word {
+    background-color: inherit !important;
+}
+ul.tag_set li:not(.tag_set__control) a, span.tag_word a {
+    text-decoration: underline;
+}
+.media_square_150 .photo,
+.patterns .featured_pattern .thumbnail,
+.yarns .search_result .preview img, .patterns .search_result .preview img,
+.photo_frame,
+.grid_photo__frame{
+    border: 1px solid #efefef;
+}
+/********************************************************
+FORUMS 
+********************************************************/
+table, .forum_glance table {
     border-bottom: 1px solid #c1c1c1;
 }
- table th:first-of-type, table td:first-of-type, .forum_glance table th:first-of-type, .forum_glance table td:first-of-type {
+table th:first-of-type, table td:first-of-type, .forum_glance table th:first-of-type, .forum_glance table td:first-of-type {
     border-left: 1px solid #c1c1c1;
 }
- table th:last-of-type,  table td:last-of-type, .forum_glance table th:last-of-type, .forum_glance table td:last-of-type {
+table th:last-of-type, table td:last-of-type, .forum_glance table th:last-of-type, .forum_glance table td:last-of-type {
     border-right: 1px solid #c1c1c1;
 }
- table tr:last-of-type td, .forum_glance table tr:last-of-type td {
+table tr:last-of-type td, .forum_glance table tr:last-of-type td {
     border-bottom: 1px solid #c1c1c1;
 }
- table th, #topics table tr:first-of-type td, .forum_glance table th, .forum_glance table tr:first-of-type td {
-    border-top:  1px solid #c1c1c1;
+table th, #topics table tr:first-of-type td, .forum_glance table th, .forum_glance table tr:first-of-type td {
+    border-top: 1px solid #c1c1c1;
 }
 table#forum_posts thead td, table.grid th, table.grid tr.header td {
     background-color: #5998a6;
     color: #FFFFFF;
 }
-.forum_post_listing .forum_post_header,
-.forum_post_listing .forum_post_row {
+.forum_post_listing .forum_post_header, .forum_post_listing .forum_post_row {
     border: 1px solid #CCC;
 }
-
 .forum_post_user {
     border-right: 1px solid #CCC;
+}
+/********************************************************
+ADVANCED SEARCH 
+********************************************************/
+body.search table tr:last-of-type td {
+    border: none;   
+}
+body.search .advanced_search__facets {
+    background-color: #f3f4f0;
+    border-right: 1px solid #c1c1c1;
+}
+body.search #search_navigation {
+    border-bottom: 3px solid #c1c1c1;
+}
+body.search .advanced_search__filter_jump .form_select,
+body.search .advanced_search__facet_content{
+    border-color: #c1c1c1;
+}
+.advanced_search__tools button {
+    margin-right: 5px;
+}
+body.search .filter_box {
+    border-color: #c1c1c1;
+}
+/********************************************************
+PATTERN PAGE
+********************************************************/
+.editor #bookmark_status, .patterns .editor #tool_buttons {
+    background: none;
+}
+#pattern_button_set {
+    border: 1px solid #c1c1c1;
+    background-color: #fff;
+}
+.download_plate {
+    box-shadow: none;
+    border-color: #c1c1c1;
+    background-color: #fff;
+}
+/********************************************************
+PROJECT PAGE
+********************************************************/
+#tool_buttons,
+.status_box_container--projects {
+    background-color: #fff;
+    padding-left: 3px;
 }
